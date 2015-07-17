@@ -8,7 +8,7 @@ var browserSync = require('browser-sync');
 gulp.task('sass', function() {
 	return gulp.src('app/scss/style.scss')
 		.pipe(sourcemaps.init())
-		.pipe(sass())
+		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer())
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('dist/css'))
