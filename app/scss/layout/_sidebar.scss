@@ -1,0 +1,16 @@
+// Sidebar Variables
+$sidebar-width: 230px;
+
+/*
+ * Sidebar
+ */
+
+
+.sidebar {
+  background-color: #1a2942;
+  width: $sidebar-width;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+}

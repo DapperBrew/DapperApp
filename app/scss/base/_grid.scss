@@ -1,0 +1,22 @@
+// set susy defaults
+$susy: (
+	//math: static,
+	columns: 12, 
+	container: 1200px,
+	//column-width: 60px,
+	gutters: .3,
+	gutter-position: split,
+	global-box-sizingX : border-box,
+	//debug: (image: show-columns)
+	);
+
+.main {
+	@include container;
+}
+
+.test { 
+	@include span(1);
+	height: 100vh; 
+	background-color: rgba(255, 0, 0, 0.06);
+}
+

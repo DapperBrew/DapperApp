@@ -1,0 +1,29 @@
+// Body Variables
+$body-background: #edf0f0;
+
+
+
+/*
+ * Body
+ */
+
+// Font Rendering
+html * {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Removes Dotted Border
+:focus {
+	outline: 0;
+}
+
+// General Styles
+html {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+// Body Font and Color
+body {
+	background: $body-background;
+}
