@@ -1,3 +1,7 @@
+/*
+ * Grid
+ */
+
 // set susy defaults
 $susy: (
 	//math: static,
@@ -6,12 +10,13 @@ $susy: (
 	//column-width: 60px,
 	gutters: .3,
 	gutter-position: split,
-	global-box-sizingX : border-box,
+	global-box-sizing: border-box,
 	//debug: (image: show-columns)
 	);
 
-.main {
+.content {
 	@include container;
+	@include gutters(inside);
 }
 
 .test { 

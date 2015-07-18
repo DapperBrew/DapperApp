@@ -1,5 +1,5 @@
 // Header Variables
-
+$header-height: 60px;
 
 /*
  * Header
@@ -7,6 +7,36 @@
 
 
 .top {
-  background-color: #fff;
-  height: 60px;
+	height: $header-height;
+	background-color: #fff;
+	position: fixed;
+	width: (100%);
+	top: 0;
+	right: 0;
+	padding-left: $sidebar-width;
+  @include z-index(header);
 }
+
+.top__wrapper {
+	@include container;
+	background-color: #fff;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	@include gutters(inside);
+}
+
+.addrecipe {
+    @include span(2);
+}
+
+.addrecipe__button {
+	@extend .button;
+	padding-left: 0;
+	padding-right: 0;
+	width: 100%;
+	i {
+		padding-right: 5px;
+	}
+}
+

@@ -1,22 +1,29 @@
-// Libraries
+// variables & mixins
+@import "base/variables";
+@import "utils/mixins";
+
+// libraries
 @import "../../bower_components/normalize-scss/normalize";
 @import "../../bower_components/susy/sass/susy";
+@import "../../bower_components/font-awesome/scss/font-awesome";
 
 
-
-// Base
+// base
 @import "base/grid";
 @import "base/body";
 
-// Components
+// components
+@import "components/buttons";
 
-// Layout
+
+// layout
 @import "layout/sidebar";
 @import "layout/header";
 @import "layout/main";
 @import "layout/footer";
 
-// Pages
+// pages
 
-// Utils
+// utils
+@import "utils/utility-classes";
 

@@ -1,7 +1,14 @@
 // Main Variables
 
 //// $sidebar-width -> _sidebar.scss
+//// $header-height -> _header.scss\
 
-.content {
-  margin-left: $sidebar-width;
+/*
+ * Main
+ */
+
+.main {
+	margin-top: $header-height;
+	margin-left: $sidebar-width;
+	@include z-index(main);
 }

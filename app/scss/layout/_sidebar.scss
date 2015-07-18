@@ -1,5 +1,5 @@
 // Sidebar Variables
-$sidebar-width: 230px;
+$sidebar-width: 200px;
 
 /*
  * Sidebar
@@ -7,10 +7,33 @@ $sidebar-width: 230px;
 
 
 .sidebar {
-  background-color: #383D45;
-  width: $sidebar-width;
-  position: fixed;
-  height: 100%;
-  top: 0;
-  left: 0;
+	background-color: #383D45;
+	width: $sidebar-width;
+	position: fixed;
+	height: 100%;
+	top: 0;
+	left: 0;
+	@include z-index(sidebar);
+}
+
+
+.logo {
+	display: inline-block;
+	padding: 25px 25px;
+}
+
+.navigation {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.navigation__link {
+	display: block;
+	padding: 15px 25px;
+	color: #fff;
+	text-decoration: none;
+	i {
+		padding-right: 10px;
+	}
 }

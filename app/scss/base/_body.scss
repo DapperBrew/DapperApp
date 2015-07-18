@@ -7,10 +7,20 @@ $body-background: #edf0f0;
  * Body
  */
 
+
 // Font Rendering
 html * {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+// Box Sizing
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 // Removes Dotted Border
@@ -21,6 +31,7 @@ html * {
 // General Styles
 html {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	box-sizing: border-box;
 }
 
 // Body Font and Color

@@ -19,7 +19,7 @@ gulp.task('sass', function() {
 });
 
 // watch files
-gulp.task('watch', ['browserSync', 'sass'], function() {
+gulp.task('watch', ['browserSync', 'sass', 'copy'], function() {
 	gulp.watch('app/scss/**/*.+(scss|sass)', ['sass']);
 	gulp.watch('app/*.html', ['copy']);
 });
@@ -38,6 +38,9 @@ gulp.task( 'copy', function() {
 	// copy index.html to app
 	gulp.src('app/*.html')
 		.pipe( gulp.dest( 'dist' ));
+	// copy font-awesome
+	gulp.src('bower_components/font-awesome/fonts/*')
+		.pipe( gulp.dest( 'dist/fonts/font-awesome'))
 	// copy jquery to app
 	gulp.src('bower_components/jquery/dist/jquery.min.js')
 		.pipe( gulp.dest( 'dist/js/vendor' ));
