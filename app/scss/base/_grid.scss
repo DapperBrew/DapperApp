@@ -3,25 +3,52 @@
  */
 
 // set susy defaults
-$susy: (
-	math: fluid,
-	columns: 12, 
-	container: 1200px,
-	//column-width: 60px,
-	gutters: .3,
-	gutter-position: split,
-	global-box-sizing: border-box,
-	//debug: (image: show-columns)
-	);
+// $susy: (
+// 	math: fluid,
+// 	columns: 12, 
+// 	//container: 1200px,
+// 	column-width: 48px,
+// 	gutters: 24px/48px,
+// 	gutter-position: split,
+// 	global-box-sizing: border-box,
+// 	//debug: (image: show-columns)
+// 	);
+
+$gutter-width: 24px;
+$pointless-column-width: 48px;
+
+// Default layout
+$default-layout: (
+  global-box-sizing: border-box,
+  columns: 12,
+  container: 1000px,
+  gutter-position: inside-static,
+  column-width: $pointless-column-width,
+  gutters: $gutter-width/$pointless-column-width
+);
+
+$susy: $default-layout;
 
 .content {
 	@include container;
-	@include gutters(inside);
+	padding-left: $gutter-width/2;
+	padding-right: $gutter-width/2;
+	padding-top: $gutter-width;
 }
 
 .test { 
 	@include span(1);
-	height: 100vh; 
-	background-color: rgba(255, 0, 0, 0.06);
 }
+
+.test2 {
+	@include span(6);
+}
+
+.test__item {
+	background-color: rgba(255, 0, 0, 0.06);
+	display: block;
+	height: 400px;
+	margin-bottom: $gutter-width;
+}
+
 
