@@ -17,21 +17,23 @@ $header-height: 60px;
   @include z-index(header);
 }
 
-.top__wrapper {
+.top-wrapper {
 	@include container;
 	background-color: #fff;
 	width: 100%;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	@include gutters(inside);
+	padding-left: gutter() * 2;
+	padding-right: gutter() * 2;
 }
 
 .addrecipe {
     @include span(2);
+    margin: 0;
 }
 
 .addrecipe__button {
 	@extend .button;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	padding-left: 0;
 	padding-right: 0;
 	width: 100%;
@@ -40,3 +42,38 @@ $header-height: 60px;
 	}
 }
 
+.top-right-menu {
+	float: right;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.top-right-menu__item {
+	float: left;
+	padding-left: 30px;
+	color: #979898;
+	a {
+		text-decoration: none;
+		color: #979898;
+	}
+}
+
+.notification {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.user {
+	padding-top: 14px;
+	padding-bottom: 14px;
+}
+
+.user__name {
+	vertical-align: middle;
+}
+
+.user__photo {
+	@extend .img-circle;
+	@extend .thumb-sm;
+}

@@ -1,0 +1,40 @@
+// variables
+$image-rounded-border-radius: 8px;
+
+
+/*
+ * image
+ */
+
+img {
+	vertical-align: middle;
+}
+
+.img-rounded {
+	border-radius: $image-rounded-border-radius;
+}
+
+.img-circle {
+	border-radius: 50%;
+}
+
+.img-responsive {
+	width: 100%;
+	height: auto;
+}
+
+.thumb-sm {
+	height: 32px;
+	width: 32px;
+}
+
+.thumb-md {
+}
+
+.thumb-lg {
+}
+
+.thumb-xl {
+}
+
+
