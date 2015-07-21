@@ -1,0 +1,10 @@
+// Variables
+
+/*
+ * Dashboard
+ */
+
+.dashboard {
+	@include container;
+	padding: gutter(6) gutter() 0;
+}

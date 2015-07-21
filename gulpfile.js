@@ -44,6 +44,9 @@ gulp.task( 'copy', function() {
 	// copy jquery to app
 	gulp.src('bower_components/jquery/dist/jquery.min.js')
 		.pipe( gulp.dest( 'dist/js/vendor' ));
+	// copy main.js to app
+	gulp.src('app/js/main.js')
+		.pipe( gulp.dest( 'dist/js' ));
 	// copy modernizr to app
 	gulp.src('bower_components/modernizr/modernizr.js')
 		.pipe( gulp.dest( 'dist/js/vendor' ))

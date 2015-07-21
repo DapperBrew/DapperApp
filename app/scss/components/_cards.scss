@@ -1,31 +1,9 @@
 // Variables
 
-$bp-large: 990px;
-$bp-medium: 750px;
-
-
-// /*
-//  * Grid
-//  */
-
-
-// Fluid Gutters
-$susy: (
-	columns: 12,
-	container: 1000px,
-	global-box-sizing: border-box,
-	gutters: .25,
-	gutter-position: split,
-);
-
-
-
-.content {
-	@include container;
-
-	padding: gutter(6) gutter() 0;
-}
-
+/*
+ * Dashboard
+ */
+ 
 %card {
 	margin-bottom: gutter(6);
 	background-color: rgba(255, 0, 0, 0.06);
@@ -34,23 +12,6 @@ $susy: (
 %card__inner {
 	background-color: rgba(255, 0, 0, 0.06);
 	display: block;
-}
-
-.dashrow {
-	@include susy-breakpoint($bp-large, $susy) {
-		margin-bottom: gutter(6);
-  }
-    	height: 352px;
-
-}
-
-.dashrow2 {
-	@include susy-breakpoint($bp-large, $susy) {
-  	height: 352px;
-		margin-bottom: gutter(6);
-  }
-    	height: 352px;
-
 }
 
 .card-6 {
