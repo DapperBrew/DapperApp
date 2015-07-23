@@ -11,10 +11,6 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var gutil = require('gulp-util');
 var del = require('del');
-var browserify = require('browserify');
-var watchify = require('watchify');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
 
 
 
@@ -22,60 +18,51 @@ var buffer = require('vinyl-buffer');
 // Settings
 // ----------------------------------------------------------------------------------------
 
+// concat with gulp (not browserify). Goes in header.
+
 var vendorjs = [
-	"bower_components/jquery/dist/jquery.min.js",
-	"bower_components/modernizr/modernizr.js",
-	"bower_components/jquery-throttle-debounce/jquery.ba-throttle-debounce.min.js"
+	'bower_components/jquery/dist/jquery.js',
+	'bower_components/jquery-throttle-debounce/jquery.ba-throttle-debounce.js'
+];
+
+var headerjs = [
+	'bower_components/modernizr/modernizr.js'
+];
+
+var appjs = [
+	'app/js/modules/*.js'
 ];
 
 var src = {
-  sass: "app/scss/**/*.scss",
-  appjs: "app/js/app.js", // main JS file
-  js: "app/js/**/*.js", // all JS files
-  vendor: vendorjs,
-  img: "app/imges/*",
-  html: "app/*.html"
+	sass: 'app/scss/**/*.scss',
+	vendor: vendorjs,
+	header: headerjs,
+	alljs: 'app/js/**/*.js',
+	app: appjs, 
+	img: 'app/images/*',
+	html: 'app/*.html'
 };
 
-var output = {
-	appjs: "dist/js",
-  js: "dist/js",
-  css: "dist/css",
-  img: "dist/img",
-  html: "dist",
-  vendor: "dist/js/vendor",
-  min_css: 'app.min.css',
-  min_ven: 'vendor.min.js',
-  min_appjs: 'app.min.js',
+var dist = {
+	css: 'dist/css',
+	js: 'dist/js',
+	vendor: 'dist/js',
+	header: 'dist/js',
+	app: 'dist/js',
+	img: 'dist/img',
+	html: 'dist',
 };
+
+var name = {
+	css: 'app.min.css',
+	vendor: 'vendor.min.js',
+	header: 'header.min.js',
+	app: 'app.min.js',
+}
 
 // ----------------------------------------------------------------------------------------
 // Tasks
 // ----------------------------------------------------------------------------------------
-
-// Task: Browserify & Watchify
-var b 				= browserify(src.appjs, watchify.args);
-var w 				= watchify(browserify(src.appjs, watchify.args));
-w.on('update', bundle);
-
-gulp.task('watchify', bundle);
-
-
-gulp.task('browserify', function() {
-	w = b
-	bundle();
-});
-
-function bundle() {
-  return w
-  	.bundle()
-    .pipe(source(output.min_appjs))
-      .pipe(buffer())
-      .pipe(sourcemaps.init({loadMaps: true}))
-      .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(output.js))
-    .pipe(browserSync.reload({stream:true}));
-}
 
 // Task: Sass
 gulp.task('sass', function() {
@@ -84,7 +71,7 @@ gulp.task('sass', function() {
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer())
 		.pipe(sourcemaps.write())
-		.pipe(gulp.dest(output.css))
+		.pipe(gulp.dest(dist.css))
 		.pipe(browserSync.reload({
 			stream: true
 		})
@@ -92,11 +79,11 @@ gulp.task('sass', function() {
 });
 
 // Task: Watch
-gulp.task('watch', ['browserSync', 'sass', 'copy', 'watchify'], function() {
+gulp.task('watch', ['browserSync', 'js', 'sass', 'copy'], function() {
 	gulp.watch(src.sass, ['sass']);
 	gulp.watch(src.html, ['copy']);
-	var bundler = w;
-	//gulp.watch(src.js, ['copy', 'vendor']);
+	gulp.watch(src.alljs, ['js']);
+	// var bundler = w;
 });
 
 
@@ -109,23 +96,42 @@ gulp.task('browserSync', function() {
 	})
 });
 
-// Task: Vendor (concat)
-gulp.task('vendor', function() {  
-  return gulp.src(src.vendor)
-    .pipe(concat(output.min_ven))
+// Task: HeaderJS(concat)
+gulp.task('headerjs', function() {  
+  return gulp.src(src.header)
+    .pipe(concat(name.header))
     .pipe(uglify())
-    .pipe(gulp.dest(output.vendor))
+    .pipe(gulp.dest(dist.header))
     .on('error', gutil.log)
 });
+
+// Task: JS (concat)
+gulp.task('appjs', function() {  
+  return gulp.src(src.app)
+    .pipe(concat(name.app))
+    .pipe(uglify())
+    .pipe(gulp.dest(dist.app))
+    .on('error', gutil.log)
+});
+
+// Task: VendorJS
+gulp.task('vendorjs', function() {  
+  return gulp.src(src.vendor)
+    .pipe(concat(name.vendor))
+    .pipe(uglify())
+    .pipe(gulp.dest(dist.vendor))
+    .on('error', gutil.log)
+});
+
+// Task : JS
+gulp.task('js', ['appjs', 'headerjs', 'vendorjs'], function(){});
 
 // Task: Copy
 gulp.task( 'copy', function() {
 	gulp.src(src.html) // index.html
-		.pipe( gulp.dest( output.html ));
+		.pipe( gulp.dest( dist.html ));
 	gulp.src('bower_components/font-awesome/fonts/*') // fontawesome
 		.pipe( gulp.dest( 'dist/fonts/font-awesome'))
-	gulp.src('app/js/main.js') // main.js
-		.pipe( gulp.dest( 'dist/js' ))
 		.pipe(browserSync.reload({
     	stream: true
   	})
@@ -143,7 +149,7 @@ gulp.task('clean', function () {
 });
 
 // Task: Build
-gulp.task('build', ['clean', 'sass', 'copy', 'vendor'], function(){});
+gulp.task('build', ['clean', 'sass', 'js', 'copy'], function(){});
 
 // Task: Default (launch server and watch files for changes)
 gulp.task('default', ['watch'], function(){});

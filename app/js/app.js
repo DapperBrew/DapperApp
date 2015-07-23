@@ -1,3 +1,5 @@
-var $ = require('jquery');
+// Bower Components
+require ('jquery');
+require ('throttle');
 
-var myModule = require('../../bower_components/jquery-throttle-debounce/jquery.ba-throttle-debounce.min.js');
+
