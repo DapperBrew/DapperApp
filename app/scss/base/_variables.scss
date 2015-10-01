@@ -1,7 +1,23 @@
 /*
- * Sidebar
+ * Variables
  */
 
+
+// Breakpoints
+$bp-small  : 480px;
+$bp-medium : 750px;
+$bp-large  : 990px;
+
+// header size
+$header-small: 40px;
+$header-large: 60px;
+
+//sidebar size
+$sidebar-small: 100px;
+$sidebar-large: 200px;
+
+// footer size
+$footer-height: 30px;
 
 // declare Font-Awesome location
 $fa-font-path: "../font/font-awesome" !default;

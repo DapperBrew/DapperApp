@@ -1,0 +1,21 @@
+/*******************
+ Breakpoint Mixins 
+ *******************/
+
+
+$bp: (
+  small:      $bp-small,
+  medium:     $bp-medium,
+  large:      $bp-large,
+);
+
+@function bp($key) {
+  @return map-get($bp, $key);
+}
+
+// Rename Susy's breakpoint mixin
+@mixin bp($key) {
+  @include susy-media(bp($key)) {
+    @content;
+  }
+}

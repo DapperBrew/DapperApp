@@ -10,3 +10,9 @@
     clear: both;
   }
 }
+
+.mobile-only {
+  @include bp(medium) {
+    display: none;
+  }
+}
