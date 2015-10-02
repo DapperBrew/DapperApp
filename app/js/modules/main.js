@@ -14,12 +14,15 @@ jQuery(document).ready(function(){
     sidebarTrigger = $('.nav-trigger'),
     topNavigation = $('.top-nav__menu'),
     addRecipe = $('.addrecipe__button');
+    mainContent = $('.main');
+    body = $('body');
 
   // Mobile only - open sidebar when user clicks the hamburger menu
   sidebarTrigger.on('click', function(event){
     event.preventDefault();
     $(sidebar).toggleClass('side-nav--visible');
     $(sidebarTrigger).toggleClass('nav-trigger--visible');
+    $(body).toggleClass('no-scroll');
   });
 
   // On mobile, move certain elements form header into nav
@@ -40,10 +43,8 @@ jQuery(document).ready(function(){
       topNavigation.appendTo(sidebar);
       //addRecipe.appendTo(sidebar);
       addRecipe.prependTo(sidebar);
-      //searchForm.removeClass('is-hidden').prependTo(sidebar);
     } else if ( ( mq == 'medium' || mq == 'large') &&  topNavigation.parents('.side-nav').length > 0 ) {
       detachElements();
-      //searchForm.insertAfter(header.find('.cd-logo'));
       topNavigation.appendTo(header.find('.top-nav'));
       addRecipe.prependTo(header);
     }
@@ -54,7 +55,6 @@ jQuery(document).ready(function(){
   function detachElements() {
     topNavigation.detach();
     addRecipe.detach();
-    //searchForm.detach();
   }
 
 })

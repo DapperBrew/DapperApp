@@ -6,13 +6,12 @@
 .top {
   height: $header-small;
   background-color: #fff;
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   @include z-index(header);
   @include bp(medium) {
-    position: fixed;
     height: $header-large;
     padding: 0 20px;
     margin-left: $sidebar-small;

@@ -91,8 +91,8 @@ gulp.task('watch', ['browserSync', 'js', 'sass', 'copy'], function() {
 gulp.task('browserSync', function() {
   browserSync({
     server: {
-      baseDir: 'dist'
-    }
+      baseDir: 'dist',
+    },
   })
 });
 

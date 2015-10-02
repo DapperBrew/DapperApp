@@ -39,6 +39,7 @@
 }
 
 .side-nav--visible {
+  position: fixed;
   opacity: 1;
   visibility: visible;
   overflow: visible;

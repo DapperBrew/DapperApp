@@ -29,6 +29,12 @@
 
   @include bp(medium) {
     min-height: calc(100vh - (#{$footer-height} + #{$header-large}));
+    //max-width: $bp-medium - $sidebar-small;
+  }
+
+  @include bp(large) {
+    max-width: 1000px;
+    //max-width: $bp-large - $sidebar-large;
   }
 }
 
