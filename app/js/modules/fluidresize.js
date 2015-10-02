@@ -5,14 +5,15 @@
 // basically: fullHeightDiv - staticDiv = flexDiv height (on load and resize)
 
 var fixHeight =  function(flexDiv, staticDiv, fullHeightDiv) {
-	var resized = function() {
-		var totalHeight = $(fullHeightDiv).outerHeight(); // get height of parent div
-		var height1 = $(staticDiv).outerHeight(true); // get height of fixed height div
-		var height2 = totalHeight - height1; // get new height of flex-height divs
-		$(flexDiv).css('height', height2); // set new height of flex-height div
-	}
-	$(window).load( resized );
-	$(window).resize( $.debounce( 250, resized ) );
+  var resized = function() {
+    var totalHeight = $(fullHeightDiv).outerHeight(); // get height of parent div
+    var height1 = $(staticDiv).outerHeight(true); // get height of fixed height div
+    var height2 = totalHeight - height1; // get new height of flex-height divs
+    $(flexDiv).css('height', height2); // set new height of flex-height div
+  }
+  $(window).load( resized );
+  $(window).resize( $.debounce( 250, resized ) );
 }
 
 fixHeight('.adjustHeight', '.setHeight', '.card-6x6');
+

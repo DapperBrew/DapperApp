@@ -1,71 +1,187 @@
-// Header Variables
-$header-height: 60px;
-
 /*
  * Header
  */
 
 
 .top {
-	height: $header-height;
-	background-color: #fff;
-	position: fixed;
-	width: (100%);
-	top: 0;
-	right: 0;
-	padding-left: $sidebar-width;
+  height: $header-small;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
   @include z-index(header);
-}
-
-.top-wrapper {
-	@include container;
-	background-color: #fff;
-	width: 100%;
-	padding-left: gutter() * 2;
-	padding-right: gutter() * 2;
+  @include bp(medium) {
+    height: $header-large;
+    padding: 0 20px;
+    margin-left: $sidebar-small;
+    width: calc(100% - #{$sidebar-small});
+  }
+  @include bp(large) {
+    margin-left: $sidebar-large;
+    width: calc(100% - #{$sidebar-large});
+  }
 }
 
 .addrecipe__button {
-	@extend .button;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	i {
-		padding-right: 5px;
-	}
+  @extend .button;
+  i { padding-right: 5px; }
+  width: 90%;
+  margin: 20px 5%;
+  @include bp(medium) {
+    width: auto;
+    margin: 10px 0;
+  }
+  @include bp(large) {
+
+  }
 }
 
-.top-right-menu {
-	float: right;
-	list-style: none;
-	padding: 0;
-	margin: 0;
+.top-nav {
+  display: block;
+  float: right;
 }
 
-.top-right-menu__item {
-	float: left;
-	padding-left: 30px;
-	color: #979898;
-	a {
-		text-decoration: none;
-		color: #979898;
-	}
+.top-nav__menu {
+  list-style: none;
+  display: inline;
+  padding: 0;
+  margin: 0;
+  @include bp(medium) {
+    line-height: $header-large;
+  }
 }
 
-.notification {
-	padding-top: 20px;
-	padding-bottom: 20px;
+.top-nav__item {
+
+  @include bp(medium) {
+    float: left;
+    padding-left: 20px;
+  }
+
 }
 
-.user {
-	padding-top: 14px;
-	padding-bottom: 14px;
+.top-nav__link {
+  display: block;
+  padding: 10px 5%;
+  text-decoration: none;
+  color: white;
+  @include bp(medium) {
+    display: inline-block;
+    color: black;
+    padding: 0 0 0 10px;
+  }
+  @include bp(large) {
+
+  }
 }
+
+
+.top-nav__title {
+  padding: 10px 5% 0;
+  border-bottom: none;
+}
+
+.top-nav__link--notification {
+  @include bp(medium) {
+    padding: 0;
+  }
+}
+
+.top-nav__link--user {
+  @include bp(medium) {
+    padding: 0;
+  }
+}
+
 
 .user__name {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 .user__photo {
-	@extend .img-circle;
-	@extend .thumb-sm;
+  @extend .img-circle;
+  @extend .thumb-sm;
+}
+
+
+// Navigation Trigger on Mobile
+
+.nav-trigger {
+  position: relative;
+  float: right;
+  width: 35px;
+  height: 40px;
+  margin-right: 5%;
+  // (hide text)
+  overflow: hidden;
+  white-space: nowrap;
+  color: transparent;
+
+  // CSS hamburger menu
+  span, 
+  span::before, 
+  span::after {
+    position: absolute;
+    display: inline-block;
+    height: 3px;
+    width: 24px;
+    background: red;
+  }
+
+  // center hamburger line
+  span {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -2px;
+    transition: background .2s;
+  }
+
+  // top and bottom hamburger line
+  span::before, 
+  span::after {
+    content: '';
+    right: 0;
+    transform-origin: 0% 50%;
+    transition: transform 0.2s;
+
+    // Force Hardware Acceleration in WebKit
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  // Top Line
+  span::before {
+    top: -6px;
+  }
+
+  // Bottom line
+  span::after {
+    top: 6px;
+  }
+  
+  // hide on anything larger than mobile
+  @include bp(medium) {
+    display: none;
+  }
+}
+
+.nav-trigger--visible {
+  // hide center line
+  span {
+    background: rgba(red, 0);
+  }
+  // don't hide other 2 lines
+  span::before, 
+  span::after {
+    background: rgba(red, 1);
+  }
+  // nifty animation
+  span::before {
+    transform: translateX(4px) translateY(-3px) rotate(45deg);
+  }
+  span::after {
+    transform: translateX(4px) translateY(2px) rotate(-45deg);
+  }
 }

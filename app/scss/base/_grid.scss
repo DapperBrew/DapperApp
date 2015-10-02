@@ -1,90 +1,151 @@
-// Variables
-
-$bp-large: 990px;
-$bp-medium: 750px;
-
-
-// /*
-//  * Grid
-//  */
+// ----------------------------------------------------------------------------------------
+// Grid
+// ----------------------------------------------------------------------------------------
 
 
 // Fluid Gutters
 $susy: (
-	columns: 12,
-	container: 1000px,
-	global-box-sizing: border-box,
-	gutters: .25,
-	gutter-position: split,
+  columns           : 12,
+  global-box-sizing : border-box,
+  container         : 1000px,
+  gutters           : .25,
+  gutter-position   : split,
 );
 
 
-
-.content {
-	@include container;
-
-	padding: gutter(6) gutter() 0;
+.grid {
+  background-color: #fff200;
+  line-height: 80px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: gutter(6);
 }
 
+.grid--1 {
+  @include span(12);
+  @include bp(medium) {
+    @include span(3);
+  }
+  @include bp(large) {
+    @include span(1);
+  }
+}
+
+.grid--2 {
+  @include span(12);
+
+  @include bp(medium) {
+    @include span(4);
+  }
+
+  @include bp(large) {
+    @include span(2);
+  }
+}
+
+.grid--3 {
+  @include span(12);
+
+  @include bp(medium) {
+    @include span(6);
+  }
+
+  @include bp(large) {
+    @include span(3);
+  }
+}
+
+.grid--4 {
+  @include span(12);
+
+  @include bp(medium) {
+    @include span(6);
+  }
+
+  @include bp(large) {
+    @include span(4);
+  }
+}
+
+.grid--6 {
+  @include span(12);
+
+  @include bp(medium) {
+    @include span(12);
+  }
+
+  @include bp(large) {
+    @include span(6);
+  }
+}
+
+.grid--12 {
+  @include span(12);
+}
+
+
 %card {
-	margin-bottom: gutter(6);
-	background-color: rgba(255, 0, 0, 0.06);
+  background-color: rgba(255, 0, 0, .06);
+  margin-bottom: gutter(6);
 }
 
 %card__inner {
-	background-color: rgba(255, 0, 0, 0.06);
-	display: block;
+  background-color: rgba(255, 0, 0, .06);
+  display: block;
 }
 
 .dashrow {
-	@include susy-breakpoint($bp-large, $susy) {
-		margin-bottom: gutter(6);
+  height: 352px;
+
+  @include susy-breakpoint($bp-large, $susy) {
+    margin-bottom: gutter(6);
   }
-    	height: 352px;
 
 }
 
 .dashrow2 {
-	@include susy-breakpoint($bp-large, $susy) {
-  	height: 352px;
-		margin-bottom: gutter(6);
+  height: 352px;
+
+  @include susy-breakpoint($bp-large, $susy) {
+    height: 352px;
+    margin-bottom: gutter(6);
   }
-    	height: 352px;
 
 }
 
 .card-6 {
-	@extend %card;
-	@include span(12);
-	@include susy-breakpoint($bp-large, $susy) {
+  @extend %card;
+  @include span(12);
+  @include susy-breakpoint($bp-large, $susy) {
     @include span(6);
   }
 }
 
 .card-3 {
-	@extend %card;
-	@include span(6);
-	@include susy-breakpoint($bp-large, $susy) {
-		@include span(3);
-	}
+  @extend %card;
+  @include span(6);
+  @include susy-breakpoint($bp-large, $susy) {
+    @include span(3);
+  }
 }
 
 .card-6x6 {
-	@extend .card-6;
-	height: 352px;
+  @extend .card-6;
+  height: 352px;
 }
 
 .card-6x4 {
-	@extend .card-6;
-	height: 208px;
+  height: 208px;
+  @extend .card-6;
 }
 
 .card-3x2 {
-	@extend .card-3;
-	height: 131px;
+  height: 131px;
+  @extend .card-3;
 }
 
 .card-3x3 {
-	@extend .card-3;
-	height: 224px;
+  height: 224px;
+  @extend .card-3;
 }

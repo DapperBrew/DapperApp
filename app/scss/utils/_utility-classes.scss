@@ -10,3 +10,13 @@
     clear: both;
   }
 }
+
+.mobile-only {
+  @include bp(medium) {
+    display: none;
+  }
+}
+
+.no-scroll {
+  overflow-y: hidden;
+}
