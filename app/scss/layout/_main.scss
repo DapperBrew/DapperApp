@@ -10,37 +10,29 @@
 // ----------------------------------------------------------------------------------------
 
 .main {
-  margin: 0 0 $footer-height; // for sticky footer
+  margin-top: $header-small;
 
   @include bp(medium) {
     margin-left: $sidebar-small;
-    margin-top: $header-small;
-  }
-  @include bp(large) {
-    margin-left: $sidebar-large;
     margin-top: $header-large;
   }
-}
-
-footer {
-  height: $footer-height;
-  line-height: $footer-height;
-  background-color: #ffffff;
-  position: absolute;
-  padding: 0 20px;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  @include bp(medium) {
-    width: calc(100% - #{$sidebar-small});
-    margin-left: $sidebar-small;
-  }
   @include bp(large) {
-    width: calc(100% - #{$sidebar-large});
     margin-left: $sidebar-large;
   }
 }
+
+
+.content {
+  @include container;
+  padding: gutter(6) gutter() 0;
+  min-height: calc(100vh - (#{$footer-height} + #{$header-small}));
+
+  @include bp(medium) {
+    min-height: calc(100vh - (#{$footer-height} + #{$header-large}));
+  }
+}
+
+
 // For JS detection of screen size
 .main::before {
   display: none;

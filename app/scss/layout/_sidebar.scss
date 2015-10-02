@@ -23,6 +23,7 @@
   }
 
   @include bp(medium) {
+    position: fixed;
     width: $sidebar-small;
     min-height: 100vh;
     float: left;
