@@ -1,16 +1,52 @@
+// ----------------------------------------------------------------------------------------
 // Main Variables
+// ----------------------------------------------------------------------------------------
 
-//// $sidebar-width -> _sidebar.scss
-//// $header-height -> _header.scss\
+// $sidebar-width -> _sidebar.scss
+// $header-height -> _header.scss\
 
-/*
- * Main
- */
+// ----------------------------------------------------------------------------------------
+// Main
+// ----------------------------------------------------------------------------------------
 
 .main {
-	margin-top: $header-height;
-	margin-left: $sidebar-width;
-	@include z-index(main);
+  margin-top: $header-small;
+
+  @include bp(medium) {
+    margin-left: $sidebar-small;
+    margin-top: $header-large;
+  }
+  @include bp(large) {
+    margin-left: $sidebar-large;
+  }
 }
 
-.content {}
+
+.content {
+  @include container;
+  padding: gutter(6) gutter() 0;
+  min-height: calc(100vh - (#{$footer-height} + #{$header-small}));
+
+  @include bp(medium) {
+    min-height: calc(100vh - (#{$footer-height} + #{$header-large}));
+    //max-width: $bp-medium - $sidebar-small;
+  }
+
+  @include bp(large) {
+    max-width: 1000px;
+    //max-width: $bp-large - $sidebar-large;
+  }
+}
+
+
+// For JS detection of screen size
+.main::before {
+  display: none;
+  content: 'small';
+  @include bp(medium) {
+    content: 'medium';
+  }
+  @include bp(large) {
+    content: 'large';
+  }
+}

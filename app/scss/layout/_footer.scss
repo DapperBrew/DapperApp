@@ -1,4 +1,16 @@
-.footer {
-	height: 30px;
-	background-color: #fff;
+footer {
+  height: $footer-height;
+  line-height: $footer-height;
+  background-color: #ffffff;
+  padding: 0 20px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  @include bp(medium) {
+
+  }
+  @include bp(large) {
+
+  }
 }

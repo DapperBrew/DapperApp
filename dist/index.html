@@ -1,72 +1,95 @@
 <!doctype html>
 <html class="no-js" lang="">
-	<head>
-			<meta charset="utf-8">
-			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-			<title></title>
-			<meta name="description" content="">
-			<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-			<link rel="stylesheet" href="css/style.css">
-			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-			<script src="js/header.min.js"></script>
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <script src="js/header.min.js"></script>
 
-	</head>
-	<body>
+  </head>
+  <body>
 
-		<div class="wrapper">
+    <header class="top">
 
-			<div class="sidebar">
-				<div class="logo">
-					<a href="index.html"><img src="http://placehold.it/150x150"></a>
-				</div> <!--/logo-->
-				<nav>
-					<ul class="navigation">
-						<li><a class="navigation__link" href="#"><i class="fa fa-home"></i>Dashboard</li></a>
-						<li><a class="navigation__link" href="#"><i class="fa fa-book"></i>Recipes</li></a>
-						<li><a class="navigation__link" href="#"><i class="fa fa-suitcase"></i>Equipment</li></a>
-						<li><a class="navigation__link" href="#"><i class="fa fa-calculator"></i>Tools</li></a>
-						<li><a class="navigation__link" href="#"><i class="fa fa-leaf"></i>Ingredients</li></a>
-					</ul>
-				</nav>
-			</div> <!--/sidebar-->
+      <button class="addrecipe__button"><i class="fa fa-plus"></i>Add Recipe</button>
+      <a href="#0" class="nav-trigger">Menu<span></span></a>
+      <nav class="top-nav">
+        <ul class="top-nav__menu">
+          <li class="side-nav__title">Admin Menu</li>
+          <li class="top-nav__item">
+            <a class="top-nav__link top-nav__link--notification" href="#">
+              <i class="fa fa-bell-o"></i>
+              <span class="badge badge-up">3</span>
+              <span class="mobile-only">Notifications</span>
+            </a>
+          </li>
+          <li class="top-nav__item">
+            <a class="top-nav__link top-nav__link--user" href="#">
+              <img class="user__photo" src="https://randomuser.me/api/portraits/thumb/men/49.jpg">
+              <span class="user__name">John Doe </span> <i class="fa fa-caret-down"></i>
+            </a>
+          </li>
+        </ul> <!--/top-nav__menu-->
+      </nav>
 
-			<header class="top">
-				<div class="top-wrapper">
-					<button class="addrecipe__button"><i class="fa fa-plus"></i>Add Recipe</button>
-					<ul class="top-right-menu">
-						<li class="top-right-menu__item notification">
-							<a class="" href="#">
-								<i class="fa fa-bell-o"></i>
-								<span class="badge badge-up">3</span>
-							</a>
-						</li>
-						<li class="top-right-menu__item user">
-							<a href="#">
-								<img class="user__photo" src="https://randomuser.me/api/portraits/thumb/men/49.jpg">
-								<span class="user__name">John Doe </span> <i class="fa fa-caret-down"></i>
-							</a>
-						</li>
-					</ul> <!--top-right-menu-->
-				</div> <!--/top__wrapper-->
-			</header>
-			<div class="main">
-				<div class="dashboard">
-						<div class="card-6x6">1</div>
-						<div class="card-6x4 setHeight">2</div>
-						<div class="card-3x2 adjustHeight">3</div>
-						<div class="card-3x2 adjustHeight">4</div>
-						<div class="card-3x3">5</div>
-						<div class="card-3x3">6</div>
-						<div class="card-3x3">7</div>
-						<div class="card-3x3">8</div>
-			</div> <!--/main-->
+    </header> <!-- .cd-main-header -->
 
-				<footer class="footer">
-				</footer>
-		</div> <!--/wrapper-->
-			<script src="js/vendor.min.js"></script>
-			<script src="js/app.min.js"></script>
+    <nav class="side-nav">
+      <a href="#" class="logo"><img src="http://placehold.it/150x150" alt="Logo"></a>
+      <ul>
+        <li class="side-nav__title">Menu</li>
+        <li><a class="side-nav__link" href="#"><i class="fa fa-home side-nav__icon"></i>Dashboard</a></li>
+        <li><a class="side-nav__link" href="#"><i class="fa fa-book side-nav__icon "></i>Recipes</a></li>
+        <li><a class="side-nav__link" href="#"><i class="fa fa-suitcase side-nav__icon "></i>Equipment</a></li>
+        <li><a class="side-nav__link" href="#"><i class="fa fa-calculator side-nav__icon r"></i>Tools</a></li>
+        <li><a class="side-nav__link" href="#"><i class="fa fa-leaf side-nav__icon "></i>Ingredients</a></li>
+        <li><a class="side-nav__link" href="#"><i class="fa fa-beer side-nav__icon "></i>Brew Day</a></li>
+      </ul>
+    </nav>
+    <main class="main">
+      <div class="content">
+        <div class="grid grid--1">1</div>
+        <div class="grid grid--1">1</div>
+        <div class="grid grid--1">1</div>
+        <div class="grid grid--1">1</div>
+        <div class="grid grid--1">1</div>
+        <div class="grid grid--1">1</div>
+        <div class="grid grid--1">1</div>
+        <div class="grid grid--1">1</div>
+        <div class="grid grid--1">1</div>
+        <div class="grid grid--1">1</div>
+        <div class="grid grid--1">1</div>
+        <div class="grid grid--1">1</div>
+        <div class="grid grid--2">2</div>
+        <div class="grid grid--2">2</div>
+        <div class="grid grid--2">2</div>
+        <div class="grid grid--2">2</div>
+        <div class="grid grid--2">2</div>
+        <div class="grid grid--2">2</div>
+        <div class="grid grid--3">3</div>
+        <div class="grid grid--3">3</div>
+        <div class="grid grid--3">3</div>
+        <div class="grid grid--3">3</div>
+        <div class="grid grid--4">4</div>
+        <div class="grid grid--4">4</div>
+        <div class="grid grid--4">4</div>
+        <div class="grid grid--6">6</div>
+        <div class="grid grid--6">6</div>
+        <div class="grid grid--12">12</div>
 
-	</body>
+      </div>
+      <footer>
+        <span>Relax, don't worry, have a homebrew</span>
+      </footer>
+    </main>
+
+    <script src="js/vendor.min.js"></script>
+    <script src="js/app.min.js"></script>
+
+  </body>
 </html>
