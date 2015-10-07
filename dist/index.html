@@ -11,85 +11,29 @@
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
       <script src="js/header.min.js"></script>
 
+
+
   </head>
   <body>
 
-    <header class="top">
+    <header class="top" id="header">
+    </header> <!-- /header -->
+    <?php include "test.html"; ?>
 
-      <button class="addrecipe__button"><i class="fa fa-plus"></i>Add Recipe</button>
-      <a href="#0" class="nav-trigger">Menu<span></span></a>
-      <nav class="top-nav">
-        <ul class="top-nav__menu">
-          <li class="side-nav__title">Admin Menu</li>
-          <li class="top-nav__item">
-            <a class="top-nav__link top-nav__link--notification" href="#">
-              <i class="fa fa-bell-o"></i>
-              <span class="badge badge-up">3</span>
-              <span class="mobile-only">Notifications</span>
-            </a>
-          </li>
-          <li class="top-nav__item">
-            <a class="top-nav__link top-nav__link--user" href="#">
-              <img class="user__photo" src="https://randomuser.me/api/portraits/thumb/men/49.jpg">
-              <span class="user__name">John Doe </span> <i class="fa fa-caret-down"></i>
-            </a>
-          </li>
-        </ul> <!--/top-nav__menu-->
-      </nav>
-
-    </header> <!-- .cd-main-header -->
-
-    <nav class="side-nav">
-      <a href="#" class="logo"><img src="http://placehold.it/150x150" alt="Logo"></a>
-      <ul>
-        <li class="side-nav__title">Menu</li>
-        <li><a class="side-nav__link" href="#"><i class="fa fa-home side-nav__icon"></i>Dashboard</a></li>
-        <li><a class="side-nav__link" href="#"><i class="fa fa-book side-nav__icon "></i>Recipes</a></li>
-        <li><a class="side-nav__link" href="#"><i class="fa fa-suitcase side-nav__icon "></i>Equipment</a></li>
-        <li><a class="side-nav__link" href="#"><i class="fa fa-calculator side-nav__icon r"></i>Tools</a></li>
-        <li><a class="side-nav__link" href="#"><i class="fa fa-leaf side-nav__icon "></i>Ingredients</a></li>
-        <li><a class="side-nav__link" href="#"><i class="fa fa-beer side-nav__icon "></i>Brew Day</a></li>
-      </ul>
+    <nav class="side-nav" id="side">
+      
     </nav>
     <main class="main">
-      <div class="content">
-        <div class="grid grid--1">1</div>
-        <div class="grid grid--1">1</div>
-        <div class="grid grid--1">1</div>
-        <div class="grid grid--1">1</div>
-        <div class="grid grid--1">1</div>
-        <div class="grid grid--1">1</div>
-        <div class="grid grid--1">1</div>
-        <div class="grid grid--1">1</div>
-        <div class="grid grid--1">1</div>
-        <div class="grid grid--1">1</div>
-        <div class="grid grid--1">1</div>
-        <div class="grid grid--1">1</div>
-        <div class="grid grid--2">2</div>
-        <div class="grid grid--2">2</div>
-        <div class="grid grid--2">2</div>
-        <div class="grid grid--2">2</div>
-        <div class="grid grid--2">2</div>
-        <div class="grid grid--2">2</div>
-        <div class="grid grid--3">3</div>
-        <div class="grid grid--3">3</div>
-        <div class="grid grid--3">3</div>
-        <div class="grid grid--3">3</div>
-        <div class="grid grid--4">4</div>
-        <div class="grid grid--4">4</div>
-        <div class="grid grid--4">4</div>
-        <div class="grid grid--6">6</div>
-        <div class="grid grid--6">6</div>
-        <div class="grid grid--12">12</div>
 
-      </div>
-      <footer>
-        <span>Relax, don't worry, have a homebrew</span>
-      </footer>
+        <div id="sample-grid"></div>
     </main>
+    <footer>
+        <span>Relax, don't worry, have a homebrew</span>
+    </footer>
 
     <script src="js/vendor.min.js"></script>
     <script src="js/app.min.js"></script>
+    <script src="js/test-app.js"></script>
 
   </body>
 </html>

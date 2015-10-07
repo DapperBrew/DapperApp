@@ -10,33 +10,38 @@
 // ----------------------------------------------------------------------------------------
 
 .main {
+  @include container;
+  padding: gutter(6) gutter() 0;
+  min-height: calc(100vh - (#{$footer-height} + #{$header-small}));
   margin-top: $header-small;
 
   @include bp(medium) {
+    min-height: calc(100vh - (#{$footer-height} + #{$header-large}));
     margin-left: $sidebar-small;
     margin-top: $header-large;
   }
   @include bp(large) {
+    max-width: 1000px;
     margin-left: $sidebar-large;
   }
 }
 
 
-.content {
-  @include container;
-  padding: gutter(6) gutter() 0;
-  min-height: calc(100vh - (#{$footer-height} + #{$header-small}));
+// .content {
+//   @include container;
+//   padding: gutter(6) gutter() 0;
+//   min-height: calc(100vh - (#{$footer-height} + #{$header-small}));
 
-  @include bp(medium) {
-    min-height: calc(100vh - (#{$footer-height} + #{$header-large}));
-    //max-width: $bp-medium - $sidebar-small;
-  }
+//   @include bp(medium) {
+//     min-height: calc(100vh - (#{$footer-height} + #{$header-large}));
+//     //max-width: $bp-medium - $sidebar-small;
+//   }
 
-  @include bp(large) {
-    max-width: 1000px;
-    //max-width: $bp-large - $sidebar-large;
-  }
-}
+//   @include bp(large) {
+//     max-width: 1000px;
+//     //max-width: $bp-large - $sidebar-large;
+//   }
+// }
 
 
 // For JS detection of screen size

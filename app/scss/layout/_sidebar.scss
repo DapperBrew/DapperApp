@@ -42,10 +42,10 @@
   position: fixed;
   opacity: 1;
   visibility: visible;
-  overflow: visible;
+  overflow: scroll;
   -webkit-overflow-scrolling: touch;
   transition: opacity 0.2s 0s, visibility 0s 0s;
-  max-height: none;
+  //max-height: none;
 }
 
 .side-nav li {

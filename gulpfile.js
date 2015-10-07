@@ -11,6 +11,10 @@ var concat       = require('gulp-concat');
 var uglify       = require('gulp-uglify');
 var gutil        = require('gulp-util');
 var del          = require('del');
+var browserify   = require('browserify');
+var source       = require('vinyl-source-stream');
+var reactify     = require('reactify');
+var babelify     = require('babelify');
 
 
 
@@ -37,7 +41,7 @@ var src = {
   sass: 'app/scss/**/*.scss',
   vendor: vendorjs,
   header: headerjs,
-  alljs: 'app/js/**/*.js',
+  //alljs: 'app/js/**/*.js',
   app: appjs, 
   img: 'app/images/*',
   html: 'app/*.html'
@@ -63,6 +67,35 @@ var name = {
 // ----------------------------------------------------------------------------------------
 // Tasks
 // ----------------------------------------------------------------------------------------
+
+
+// TESTING
+
+gulp.task('test', function () {
+  browserify({
+    entries: 'app/js/test.js',
+    //extensions: ['.jsx'],
+    transform: [babelify],
+    debug: true
+  })
+  .bundle()
+  .pipe(source('test-app.js'))
+  .pipe(gulp.dest(dist.js));
+});
+
+gulp.task('browserify', function() {
+  var bundler = browserify({
+    entries: ['app/js/test.js'], // Only need initial file, browserify finds the deps
+    transform: [reactify, babelify], // We want to convert JSX to normal javascript
+    debug: true, // Gives us sourcemapping
+  })
+    .bundle()
+    .pipe(source('test-app.js'))
+    .pipe(gulp.dest(dist.js));
+});
+
+
+
 
 // Task: Sass
 gulp.task('sass', function() {
