@@ -5,12 +5,11 @@ footer {
   padding: 0 20px;
   left: 0;
   bottom: 0;
-  width: 100%;
   text-align: center;
   @include bp(medium) {
-
+    margin-left: 100px;
   }
   @include bp(large) {
-
+    margin-left: 200px;
   }
 }
