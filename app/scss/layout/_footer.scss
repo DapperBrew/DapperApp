@@ -5,12 +5,11 @@ footer {
   padding: 0 20px;
   left: 0;
   bottom: 0;
-  width: 100%;
   text-align: center;
   @include bp(medium) {
-
+    margin-left: $sidebar-small;
   }
   @include bp(large) {
-
+    margin-left: $sidebar-large;
   }
 }

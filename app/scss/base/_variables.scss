@@ -2,6 +2,19 @@
  * Variables
  */
 
+@import "colors.scss";
+
+// Type
+
+$baseFontSize       : 16;
+$baseLineHeight     : 1.5;
+$leading            : $baseLineHeight * 1rem;
+$unit               : $leading;
+$scale              : 1.414;
+$sans-serif         : 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+$serif              : 'Cambria', 'Georgia', 'serif';
+$font-family        : 'Proxima Nova', $sans-serif;
+$header-font-family : $sans-serif;
 
 // Breakpoints
 $bp-small  : 480px;
@@ -9,15 +22,18 @@ $bp-medium : 750px;
 $bp-large  : 990px;
 
 // header size
-$header-small: 40px;
-$header-large: 60px;
+$header-small: 50px;
+$header-large: $unit * 2;
 
 //sidebar size
 $sidebar-small: 100px;
-$sidebar-large: 200px;
+$sidebar-large: 180px;
 
 // footer size
 $footer-height: 30px;
+
+// Misc
+$radius: 6px;
 
 // declare Font-Awesome location
 $fa-font-path: "../font/font-awesome" !default;
