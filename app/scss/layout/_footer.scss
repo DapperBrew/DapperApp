@@ -7,9 +7,9 @@ footer {
   bottom: 0;
   text-align: center;
   @include bp(medium) {
-    margin-left: 100px;
+    margin-left: $sidebar-small;
   }
   @include bp(large) {
-    margin-left: 200px;
+    margin-left: $sidebar-large;
   }
 }

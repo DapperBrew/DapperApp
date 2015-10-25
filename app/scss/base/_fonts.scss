@@ -1,0 +1,78 @@
+// ----------------------------------------------------------------------------------------
+// Fonts
+// ----------------------------------------------------------------------------------------
+
+
+// Nucleo
+@font-face {
+  font-family: 'Nucleo Glyph';
+  src:url('../fonts/nucleo-glyph.eot');
+  src:url('../fonts/nucleo-glyph.eot') format('embedded-opentype'),
+    url('../fonts/nucleo-glyph.woff2') format('woff2'),
+    url('../fonts/nucleo-glyph.woff') format('woff'),
+    url('../fonts/nucleo-glyph.ttf') format('truetype'),
+    url('../fonts/nucleo-glyph.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nucleo Outline';
+  src:url('../fonts/nucleo-outline.eot');
+  src:url('../fonts/nucleo-outline.eot') format('embedded-opentype'),
+    url('../fonts/nucleo-outline.woff2') format('woff2'),
+    url('../fonts/nucleo-outline.woff') format('woff'),
+    url('../fonts/nucleo-outline.ttf') format('truetype'),
+    url('../fonts/nucleo-outline.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Proxima Nova
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/proximanova-light-webfont.woff') format('woff'),
+       url('../fonts/proximanova-light-webfont.tff') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/proximanova-regular-webfont.woff') format('woff'),
+       url('../fonts/proximanova-regular-webfont.tff') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/proximanova-semibold-webfont.woff') format('woff'),
+       url('../fonts/proximanova-semibold-webfont.tff') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/proximanova-bold-webfont.woff') format('woff'),
+       url('../fonts/proximanova-bold-webfont.tff') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/proximanova-extrabold-webfont.woff') format('woff'),
+       url('../fonts/proximanova-extrabold-webfont.tff') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/proximanova-black-webfont.woff') format('woff'),
+       url('../fonts/proximanova-black-webfont.tff') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
