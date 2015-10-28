@@ -33,6 +33,12 @@ var appjs = [
   'app/js/modules/*.js'
 ];
 
+var allfonts = [
+  'app/fonts/proximanova/*',
+  'app/fonts/nucleo/glyph/fonts/*',
+  'app/fonts/nucleo/outline/fonts/*'
+];
+
 var src = {
   sass: 'app/scss/**/*.scss',
   vendor: vendorjs,
@@ -40,7 +46,8 @@ var src = {
   alljs: 'app/js/**/*.js',
   app: appjs, 
   img: 'app/images/*',
-  html: 'app/*.html'
+  html: 'app/*.html',
+  fonts: allfonts,
 };
 
 var dist = {
@@ -51,6 +58,7 @@ var dist = {
   app: 'dist/js',
   img: 'dist/img',
   html: 'dist',
+  fonts: 'dist/fonts'
 };
 
 var name = {
@@ -131,6 +139,10 @@ gulp.task('js', ['appjs', 'headerjs', 'vendorjs'], function(){});
 gulp.task( 'copy', function() {
   gulp.src(src.html) // index.html
     .pipe( gulp.dest( dist.html ));
+  gulp.src(src.img)
+    .pipe( gulp.dest( dist.img ));
+  gulp.src(src.fonts)
+    .pipe( gulp.dest( dist.fonts ));
   gulp.src('bower_components/font-awesome/fonts/*') // fontawesome
     .pipe( gulp.dest( 'dist/fonts/font-awesome'))
     .pipe(browserSync.reload({
