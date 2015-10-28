@@ -1,6 +1,6 @@
-/*
- * Header
- */
+// ----------------------------------------------------------------------------------------
+// Header
+// ----------------------------------------------------------------------------------------
 
 
 .top {
@@ -42,8 +42,6 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    //width: auto;
-    //margin: 10px 0;
   }
   @include bp(large) {
 
@@ -61,17 +59,14 @@
   padding: 0;
   margin: 0;
   @include bp(medium) {
-    line-height: $header-large;
   }
 }
 
 .top-nav__item {
-
   @include bp(medium) {
     float: left;
-    padding-left: 20px;
+    padding-left: 30px;
   }
-
 }
 
 .top-nav__link {
@@ -82,42 +77,69 @@
   @include bp(medium) {
     display: inline-block;
     color: black;
-    padding: 0 0 0 10px;
+    padding: 0;
   }
   @include bp(large) {
-
   }
 }
-
 
 .top-nav__title {
   padding: 10px 5% 0;
   border-bottom: none;
 }
 
-.top-nav__link--notification {
+.top-notification {
   @include bp(medium) {
+    position: relative;
     padding: 0;
     font-size: 16px;
   }
 }
 
-.top-nav__link--user {
-  @include bp(medium) {
-    padding: 0;
-  }
+.top-notification__icon {
+  line-height: 30px;
+  margin: 10px 0;
+  font-size: 18px;
 }
 
+.top-notification__badge {
+  position:absolute;
+  top: 8px;
+  right: -8px;
+  font-size: 11px;
+  background: #FF5F5F;
+  color: #fff;
+  width:16px;height:16px;
+  text-align:center;
+  line-height:16px;
+  border-radius:50%;
+}
 
-.user__name {
+.top-user {
+  padding: 10px 0;
+}
+
+.top-user__name {
+  color: $dark-gray;
+  font-size: 18px;
+  margin-right: 2px;
   vertical-align: middle;
 }
 
-.user__photo {
-  @extend .img-circle;
-  @extend .thumb-sm;
+.top-user__photo {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
 }
 
+.top-user__icon {
+  vertical-align: middle;
+  font-size: 10px;
+  color: $dark-gray;
+  position: relative;
+  top: 2px;
+}
 
 // Navigation Trigger on Mobile
 
