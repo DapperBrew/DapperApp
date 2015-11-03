@@ -8,6 +8,11 @@
 
 jQuery(document).ready(function(){
 
+  $(".side-nav").mCustomScrollbar({
+    axis:"y",
+    theme: "minimal"
+  });
+
   // Cache DOM elements
   var header = $('.top'),
     sidebar = $('.side-nav'),

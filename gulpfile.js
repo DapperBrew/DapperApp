@@ -22,7 +22,8 @@ var del          = require('del');
 
 var vendorjs = [
   'bower_components/jquery/dist/jquery.js',
-  'bower_components/jquery-throttle-debounce/jquery.ba-throttle-debounce.js'
+  'bower_components/jquery-throttle-debounce/jquery.ba-throttle-debounce.js',
+  'bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js'
 ];
 
 var headerjs = [
