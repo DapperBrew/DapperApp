@@ -106,15 +106,17 @@
 
 .top-notification__badge {
   position:absolute;
-  top: 6px;
-  right: -6px;
+  top: 7px;
+  right: -2px;
   font-size: 11px;
-  background: #FF5F5F;
+  background: #FD4E4E;
   color: #fff;
-  width:16px;height:16px;
+  width:14px;
+  height:14px;
   text-align:center;
   line-height:16px;
   border-radius:50%;
+  border: 2px solid #fff;
 }
 
 .top-user {
