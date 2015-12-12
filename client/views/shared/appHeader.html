@@ -1,0 +1,33 @@
+<template name="appHeader">
+
+  <header class="top">
+  
+    <button class="addrecipe__button">Add Recipe</button>
+    <a href="#0" class="nav-trigger">Menu<span></span></a>
+    <nav class="top-nav">
+      <ul class="top-nav__menu">
+        <li class="side-nav__title side-nav__title--admin">Admin Menu</li>
+        <li class="top-nav__item top-nav__item--hover">
+          <a class="top-nav__link top-notification" href="#">
+            <i class="nc-icon-glyph ui-1_bell-53 top-notification__icon"></i>
+            <span class="top-notification__badge"></span>
+            <span class="mobile-only">Notifications</span>
+          </a>
+          <ul class="top-dropdown">
+            <li class="top-dropdown__title">Notifications</li>
+            <li class="top-dropdown__item"><a href="">Dapper 1.2 released</a></li>
+            <li class="top-dropdown__item"><a href="">Ballast Point recipe pack now available</a></li>
+            <li class="top-dropdown__item"><a href="">Hop Pun is ready to bottle</a></li>
+          </ul>
+        </li>
+        <li class="top-nav__item">
+          <a class="top-nav__link top-user" href="#">
+            <img class="top-user__photo" src="/images/user.jpg">
+            <span class="top-user__name">Dan</span> <i class="nc-icon-outline arrows-1_minimal-down top-user__icon"></i>
+          </a>
+        </li>
+      </ul> <!--/top-nav__menu-->
+    </nav>
+
+  </header> <!-- .cd-main-header -->
+</template>
